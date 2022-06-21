@@ -1,5 +1,5 @@
-train: /content/v5public/dataset/train
-val: /content/v5public/dataset/valid
+train: /content/yolov5-qctool/dataset/train
+val: /content/yolov5-qctool/dataset/valid
 
 nc: 2
 names: ['chap', 'lines']
