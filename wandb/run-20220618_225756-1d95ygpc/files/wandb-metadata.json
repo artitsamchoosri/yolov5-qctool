@@ -1,0 +1,21 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.13",
+    "heartbeatAt": "2022-06-18T15:57:59.515546",
+    "startedAt": "2022-06-18T15:57:56.297577",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 950M",
+    "gpu_count": 1,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [
+        "--weights",
+        "dataset/best.pt"
+    ],
+    "state": "running",
+    "program": "train.py",
+    "codePath": "train.py",
+    "host": "DESKTOP-QJRTF1N",
+    "username": "Artit",
+    "executable": "C:\\ProgramData\\Anaconda3\\envs\\yolov5t\\python.exe"
+}

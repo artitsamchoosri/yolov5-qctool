@@ -1,0 +1,812 @@
+
+Downloading https://github.com/ultralytics/yolov5/releases/download/v6.1/yolov5s.pt to yolov5s.pt...
+
+
+100%|██████████| 14.1M/14.1M [00:04<00:00, 3.54MB/s]
+                 from  n    params  module                                  arguments
+  0                -1  1      3520  models.common.Conv                      [3, 32, 6, 2, 2]
+  1                -1  1     18560  models.common.Conv                      [32, 64, 3, 2]
+  2                -1  1     18816  models.common.C3                        [64, 64, 1]
+  3                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  4                -1  2    115712  models.common.C3                        [128, 128, 2]
+  5                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  6                -1  3    625152  models.common.C3                        [256, 256, 3]
+  7                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  8                -1  1   1182720  models.common.C3                        [512, 512, 1]
+  9                -1  1    656896  models.common.SPPF                      [512, 512, 5]
+ 10                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  1    361984  models.common.C3                        [512, 256, 1, False]
+ 14                -1  1     33024  models.common.Conv                      [256, 128, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  1     90880  models.common.C3                        [256, 128, 1, False]
+ 18                -1  1    147712  models.common.Conv                      [128, 128, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  1    296448  models.common.C3                        [256, 256, 1, False]
+ 21                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  1   1182720  models.common.C3                        [512, 512, 1, False]
+ 24      [17, 20, 23]  1     18879  models.yolo.Detect                      [2, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [128, 256, 512]]
+Model Summary: 270 layers, 7025023 parameters, 7025023 gradients
+Transferred 342/349 items from yolov5s.pt
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 57 weight, 60 weight (no decay), 60 bias
+
+
+
+[34m[1mtrain: [39m[22mScanning 'dataset\train\labels' images and labels...516 found, 0 missing, 18 empty, 0 corrupted: 100%|██████████| 516/516 [01:03<00:00,  8.14it/s]
+[34m[1mtrain: [39m[22mNew cache created: dataset\train\labels.cache
+[34m[1mval: [39m[22mScanning 'dataset\valid\labels' images and labels...:   0%|          | 0/48 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mScanning 'dataset\valid\labels' images and labels...48 found, 0 missing, 0 empty, 0 corrupted: 100%|██████████| 48/48 [00:13<00:00,  3.64it/s]
+[34m[1mval: [39m[22mNew cache created: dataset\valid\labels.cache
+[34m[1mautoanchor: [39m[22mAnalyzing anchors... anchors/target = 2.68, Best Possible Recall (BPR) = 0.9814
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1mruns\train\exp
+Starting training for 300 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     0/299     3.12G    0.1255   0.02175   0.02528        23       640: 100%|██████████| 33/33 [03:23<00:00,  6.17s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]c:\ProgramData\Anaconda3\envs\yolov5t\lib\site-packages\torch\functional.py:568: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:2228.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:08<00:08,  8.89s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:11<00:00,  5.67s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     1/299     3.59G     0.116   0.01632   0.01962        14       640: 100%|██████████| 33/33 [03:11<00:00,  5.80s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:04<00:04,  4.81s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:07<00:00,  3.66s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     2/299     3.59G    0.1139    0.0136   0.01648        14       640: 100%|██████████| 33/33 [03:47<00:00,  6.91s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.78s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.93s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     3/299     3.59G    0.1128   0.01303   0.01488        27       640: 100%|██████████| 33/33 [03:07<00:00,  5.67s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:04<00:00,  2.40s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|          | 0/33 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     4/299     3.59G     0.108    0.0121   0.01329        12       640: 100%|██████████| 33/33 [03:08<00:00,  5.72s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.79s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|          | 0/33 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     5/299     3.59G    0.1102   0.01185   0.01273        20       640: 100%|██████████| 33/33 [03:13<00:00,  5.86s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.44s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.63s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     6/299     3.59G    0.1058   0.01239   0.01165        19       640: 100%|██████████| 33/33 [03:08<00:00,  5.71s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.05s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:04<00:00,  2.43s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     7/299     3.59G    0.0998   0.01185   0.01214         9       640: 100%|██████████| 33/33 [03:00<00:00,  5.48s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.45s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.64s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     8/299     3.59G    0.1039   0.01195   0.01105        11       640: 100%|██████████| 33/33 [03:03<00:00,  5.56s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.79s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|          | 0/33 [00:00<?, ?it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     9/299     3.59G    0.1012    0.0129   0.01143         7       640: 100%|██████████| 33/33 [03:05<00:00,  5.63s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.46s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.65s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    10/299     3.59G   0.09705   0.01259   0.01035        11       640: 100%|██████████| 33/33 [03:03<00:00,  5.55s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.24s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:04<00:00,  2.43s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    11/299     3.59G   0.09347    0.0131   0.01084        14       640: 100%|██████████| 33/33 [03:05<00:00,  5.61s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:  50%|█████     | 1/2 [00:03<00:03,  3.65s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.70s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    12/299     3.59G   0.09157   0.01336   0.00994        13       640: 100%|██████████| 33/33 [03:57<00:00,  7.21s/it]
+
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:16<00:00,  8.09s/it]
+                 all         48        162     0.0936     0.0923     0.0262    0.00567
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    13/299     3.59G   0.08983   0.01296   0.01097         8       640: 100%|██████████| 33/33 [03:43<00:00,  6.77s/it]
+
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95: 100%|██████████| 2/2 [00:05<00:00,  2.80s/it]
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+  0%|          | 0/33 [00:00<?, ?it/s]
+    14/299     3.59G   0.08561  0.008452  0.006495        53       640:   3%|▎         | 1/33 [00:05<03:11,  5.98s/it]
+    14/299     3.59G   0.09368   0.01037    0.0072        51       640:   6%|▌         | 2/33 [00:11<03:03,  5.93s/it]
+    14/299     3.59G   0.09319    0.0131  0.008716        64       640:   9%|▉         | 3/33 [00:17<02:58,  5.94s/it]
+    14/299     3.59G   0.09458   0.01279  0.008338        66       640:  12%|█▏        | 4/33 [00:23<02:50,  5.88s/it]
+    14/299     3.59G    0.0944   0.01248  0.008334        77       640:  15%|█▌        | 5/33 [00:29<02:44,  5.88s/it]
+    14/299     3.59G   0.09549   0.01229  0.008045        72       640:  18%|█▊        | 6/33 [00:35<02:37,  5.85s/it]
+    14/299     3.59G   0.09074   0.01178     0.011        52       640:  21%|██        | 7/33 [00:41<02:34,  5.92s/it]
+    14/299     3.59G   0.08997   0.01233   0.01059        66       640:  24%|██▍       | 8/33 [00:46<02:20,  5.61s/it]
+    14/299     3.59G   0.08727   0.01182   0.01017        36       640:  27%|██▋       | 9/33 [00:52<02:17,  5.71s/it]
+    14/299     3.59G   0.08515   0.01166  0.009854        56       640:  30%|███       | 10/33 [00:57<02:08,  5.57s/it]
+    14/299     3.59G   0.08517   0.01149  0.009811        55       640:  33%|███▎      | 11/33 [01:03<02:05,  5.72s/it]
+    14/299     3.59G    0.0868   0.01158  0.009795        58       640:  36%|███▋      | 12/33 [01:09<01:59,  5.68s/it]
+    14/299     3.59G   0.08699    0.0119  0.009931        77       640:  39%|███▉      | 13/33 [01:14<01:52,  5.60s/it]
+    14/299     3.59G   0.08716   0.01261  0.009833       106       640:  42%|████▏     | 14/33 [01:19<01:45,  5.55s/it]
+    14/299     3.59G   0.08714   0.01266  0.009847        43       640:  45%|████▌     | 15/33 [01:24<01:35,  5.33s/it]
+    14/299     3.59G   0.08753   0.01257   0.00975        55       640:  48%|████▊     | 16/33 [01:30<01:34,  5.57s/it]
+    14/299     3.59G   0.08744   0.01261  0.009625        52       640:  52%|█████▏    | 17/33 [01:35<01:26,  5.41s/it]
+    14/299     3.59G   0.08722   0.01246  0.009522        44       640:  55%|█████▍    | 18/33 [01:41<01:23,  5.56s/it]
+    14/299     3.59G   0.08738   0.01254  0.009476        63       640:  58%|█████▊    | 19/33 [01:48<01:21,  5.82s/it]
+    14/299     3.59G   0.08581   0.01248  0.009402        58       640:  61%|██████    | 20/33 [01:54<01:15,  5.84s/it]
+    14/299     3.59G   0.08642   0.01257  0.009302        67       640:  64%|██████▎   | 21/33 [02:00<01:10,  5.90s/it]
+    14/299     3.59G   0.08697    0.0125  0.009632        42       640:  67%|██████▋   | 22/33 [02:06<01:04,  5.87s/it]
+    14/299     3.59G   0.08705   0.01257  0.009622        78       640:  70%|██████▉   | 23/33 [02:11<00:58,  5.89s/it]
+    14/299     3.59G   0.08696   0.01255  0.009592        49       640:  73%|███████▎  | 24/33 [02:17<00:53,  5.90s/it]
+    14/299     3.59G    0.0871   0.01266  0.009491        89       640:  76%|███████▌  | 25/33 [02:23<00:47,  5.96s/it]
+    14/299     3.59G   0.08716   0.01286  0.009413        64       640:  79%|███████▉  | 26/33 [02:29<00:40,  5.76s/it]
+    14/299     3.59G    0.0872   0.01279   0.00928        41       640:  82%|████████▏ | 27/33 [02:36<00:36,  6.05s/it]
+    14/299     3.59G   0.08628   0.01272  0.009201        58       640:  85%|████████▍ | 28/33 [02:41<00:30,  6.02s/it]
+    14/299     3.59G   0.08637   0.01273  0.009211        61       640:  88%|████████▊ | 29/33 [02:47<00:23,  5.90s/it]
+    14/299     3.59G   0.08642   0.01278  0.009209        83       640:  91%|█████████ | 30/33 [02:53<00:17,  5.76s/it]
+    14/299     3.59G   0.08565   0.01268  0.009354        61       640:  94%|█████████▍| 31/33 [02:58<00:11,  5.79s/it]
+    14/299     3.59G   0.08577   0.01271  0.009402        52       640:  97%|█████████▋| 32/33 [03:04<00:05,  5.84s/it]
+    14/299     3.59G   0.08498   0.01261  0.009256         9       640: 100%|██████████| 33/33 [03:06<00:00,  5.65s/it]
+    14/299     3.59G   0.08498   0.01261  0.009256         9       640: 100%|██████████| 33/33 [03:06<00:00,  5.65s/it]
+    14/299     3.59G   0.08498   0.01261  0.009256         9       640: 100%|██████████| 33/33 [03:06<00:00,  5.65s/it]
+  0%|          | 0/33 [00:00<?, ?it/s]61  0.009256         9       640: 100%|██████████| 33/33 [03:06<00:00,  5.65s/it]
+    15/299     3.59G   0.09606   0.01081   0.01527        64       640:   3%|▎         | 1/33 [00:06<03:12,  6.02s/it]]
+    15/299     3.59G   0.09498  0.009807   0.01584        44       640:   6%|▌         | 2/33 [00:11<02:54,  5.62s/it]]
+    15/299     3.59G   0.09487   0.01023   0.01459        48       640:   9%|▉         | 3/33 [00:17<02:52,  5.74s/it]]
+    15/299     3.59G   0.09366   0.01105   0.01341        75       640:  12%|█▏        | 4/33 [00:22<02:35,  5.36s/it]]
+    15/299     3.59G   0.08782   0.01076   0.01326        72       640:  15%|█▌        | 5/33 [00:27<02:34,  5.53s/it]]
+    15/299     3.59G   0.08367   0.01025   0.01214        51       640:  18%|█▊        | 6/33 [00:33<02:27,  5.47s/it]]
+    15/299     3.59G      0.08   0.01008   0.01125        53       640:  21%|██        | 7/33 [00:38<02:20,  5.40s/it]]
+    15/299     3.59G   0.08061   0.01056   0.01094        77       640:  24%|██▍       | 8/33 [00:44<02:17,  5.50s/it]]
+    15/299     3.59G   0.08075   0.01082   0.01057        63       640:  27%|██▋       | 9/33 [00:50<02:15,  5.66s/it]]
+    15/299     3.59G   0.08291   0.01071   0.01022        41       640:  30%|███       | 10/33 [00:56<02:12,  5.76s/it]
+    15/299     3.59G   0.08389    0.0107  0.009876        55       640:  33%|███▎      | 11/33 [01:01<02:02,  5.58s/it]
+    15/299     3.59G   0.08482   0.01096  0.009958        58       640:  36%|███▋      | 12/33 [01:07<02:00,  5.72s/it]
+    15/299     3.59G    0.0854   0.01081   0.01006        45       640:  39%|███▉      | 13/33 [01:13<01:56,  5.84s/it]
+    15/299     3.59G    0.0857   0.01091  0.009937        68       640:  42%|████▏     | 14/33 [01:18<01:46,  5.63s/it]
+    15/299     3.59G   0.08604   0.01121  0.009869        77       640:  45%|████▌     | 15/33 [01:24<01:41,  5.64s/it]
+    15/299     3.59G   0.08682   0.01132  0.009877        69       640:  48%|████▊     | 16/33 [01:30<01:37,  5.73s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+    15/299     3.59G   0.08697   0.01147  0.009935        54       640:  52%|█████▏    | 17/33 [01:36<01:32,  5.76s/it]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/33 [00:00<?, ?it/s]bels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/33 [00:00<?, ?it/s]bels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+    16/299     3.59G     0.086   0.01221  0.006746        44       640:   3%|▎         | 1/33 [00:06<03:15,  6.11s/it] ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+                 all         48        162      0.173      0.251     0.0913     0.0216
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+                 all         48        162      0.191      0.137     0.0799     0.0199
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+     Epoch   gpu_mem       box       obj       cls    labels  img_sizeAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+               Class     Images     Labels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+  0%|          | 0/33 [00:00<?, ?it/s]bels          P          R     mAP@.5 mAP@.5:.95:   0%|          | 0/2 [00:00<?, ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
+    20/299     3.59G   0.09221   0.01516  0.007616        71       640:   3%|▎         | 1/33 [00:04<02:19,  4.35s/it] ?it/s]
