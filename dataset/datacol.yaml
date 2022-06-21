@@ -1,5 +1,5 @@
-train: ../dataset/train
-val: ../dataset/valid
+train: ../train/images
+val: ../valid/images
 
 nc: 2
 names: ['chap', 'lines']
